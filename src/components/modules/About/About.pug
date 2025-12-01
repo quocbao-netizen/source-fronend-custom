@@ -1,0 +1,27 @@
+.embla(class="w-full")
+    .embla__viewport(class="overflow-hidden")
+        .embla__container(class="flex")
+            -for(let i=0;i<10;i++)
+                .embla__slide(class="flex-center flex-[0_0_100%] h-20 bg-red-100 text-red-900")=i
+.container 
+    .row 
+        .col-4 
+            div(class="h-30 bg-red-400")
+        .col-8
+            div(class="h-30 bg-red-400")
+.container 
+    .bg-red-300.h-30
+.paralax-wrap(class="w-20 h-20 fixed left-1/2 -translate-x-1/2 top-[300px]")
+    .icon-img(data-depth="1" class="w-full h-full bg-blue-300")
+.paralax-wrap(class="w-20 h-20 fixed left-[100px] bottom-[400px]")
+    .icon-img(data-depth="0.5" class="w-full h-full bg-blue-300")
+.paralax-wrap(class="w-20 h-20 fixed left-1/2 -translate-x-1/2 top-[200px]")
+    .icon-img(data-depth="0.5" class="w-full h-full bg-blue-300")
+.paralax-wrap(class="w-20 h-20 fixed left-1/2 -translate-x-1/2 top-[150px]")
+    .icon-img(data-depth="0.3" class="w-full h-full bg-blue-300")
+.paralax-wrap(class="w-20 h-20 fixed left-1/2 -translate-x-1/2 top-[250px]")
+    .icon-img(data-depth="1" class="w-full h-full bg-blue-300")
+.paralax-wrap(class="w-20 h-20 fixed left-[500px] bottom-[100px]")
+    .icon-img(data-depth="0.3" class="w-full h-full bg-blue-300")
+.paralax-wrap(class="w-20 h-20 fixed left-[500px] top-[100px]")
+    .icon-img(data-depth="1" class="w-full h-full bg-blue-300")

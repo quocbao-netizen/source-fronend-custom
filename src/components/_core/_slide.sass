@@ -1,0 +1,92 @@
+.wrap-button-slide
+	display: flex
+	align-items: center
+	justify-content: center
+	@apply gap-5 xl:gap-0
+	@apply mt-5 xl:mt-0
+	&.none-static
+		@apply mt-0
+		.btn-prev,.btn-next
+			@apply absolute top-1/2 -translate-y-1/2 z-1
+		.btn-prev
+			@apply -xl:left-4 xl:rem:right-[calc(100%+40px)]
+		.btn-next
+			@apply -xl:right-4 xl:rem:left-[calc(100%+40px)]
+	&.static-mobile
+		.btn-prev,.btn-next
+			@apply static xl:absolute xl:top-1/2 xl:-translate-y-1/2 z-1
+		.btn-prev
+			@apply -xl:left-4 xl:rem:right-[calc(100%+40px)]
+		.btn-next
+			@apply -xl:right-4 xl:rem:left-[calc(100%+40px)]
+	.btn-prev,.btn-next
+		&.swiper-button-lock
+			@apply hidden
+.btn.swiper-button-disabled
+	@apply opacity-30 cursor-not-allowed #{!important}
+.pagination-style-primary
+	@apply static mt-10 bg-neutral-100 #{!important}
+	&>*
+		@apply bg-red-500 #{!important}
+.swiper-column-auto
+	@apply relative
+	--mr: theme('spacing.mobile')
+	--spv: 1
+	@screen md
+		--mr: theme('spacing.md')
+	@screen lg
+		--mr: theme('spacing.lg')
+	&.space-24
+		--mr: theme('spacing.mobile')
+		@screen md
+			--mr: theme('spacing.md-24')
+	&[data-time='0']
+		.swiper-wrapper
+			transition-timing-function: linear
+	.swiper-slide.swiper-slide
+		@apply overflow-visible
+	.swiper-slide
+		width: calc(calc(100% - calc(var(--mr) * calc(var(--spv) - 1)))/var(--spv))
+		@apply h-auto
+		&:not(:last-child)
+			margin-right: var(--mr)
+	&.auto-2-column
+		.swiper-slide
+			@screen md
+				--spv: 2
+	&.auto-3-column
+		.swiper-slide
+			@screen md
+				--spv: 2
+			@screen lg
+				--spv: 3
+		&.show-half-mobile
+			@media (max-width: 767.98px)
+				.swiper-slide
+					width: 80%
+	&.auto-4-column
+		.swiper-slide
+			--spv: 1.5
+			@screen sm
+				--spv: 2.5
+			@screen lg
+				--spv: 3.5
+			@screen xl
+				--spv: 4
+	&.auto-5-column
+		.swiper-slide
+			@screen sm
+				--spv: 2
+			@screen md
+				--spv: 3
+			@screen lg
+				--spv: 4
+			@screen xl
+				--spv: 5
+	&.show-half-mobile
+		@media (max-width: 575.98px)
+			.swiper-slide
+				width: 80%
+	&.allow-touchMove
+		.swiper-slide
+			@apply cursor-grab

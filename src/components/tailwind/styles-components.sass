@@ -1,0 +1,25 @@
+@layer components
+    form.submitting
+        button
+            @apply pointer-events-none relative
+            &::before
+                content: ''
+                animation-duration: 0.5s
+                @apply w-5 h-5 border-3 border-primary-1/40 border-t-primary-1 rounded-full inline-block
+                @apply absolute animate-spin left-full ml-3
+    // grid res
+    .grid-col-5-res
+        @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5
+    .grid-col-4-res-2
+        @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4
+    .grid-col-4-res-1
+        @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
+    #modal
+        @apply fixed z-[999] inset-0 translate-x-full bg-black/40 opacity-0 invisible transition-300 delay-[0.3s] 
+    // hover link
+    .hover-link
+        @apply relative pb-0.5
+        &::after
+            @apply content-[''] absolute bottom-0 left-0 inline-block w-0 border-b border-transparent opacity-0 transition-300
+        &:hover::after
+            @apply w-full border-white/50 opacity-100
