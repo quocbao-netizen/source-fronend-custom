@@ -90,7 +90,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      primary: ["Inter Tight", "sans-serif"],
+      primary: ["Montserrat", "sans-serif"],
       "inter-tight": "Inter Tight",
       goldman: ["Goldman", "sans-serif"],
       awesome: ['"Font Awesome 6 Pro"'],
@@ -261,33 +261,29 @@ module.exports = {
       colors: {
         transparent: "transparent",
         primary: {
-          1: "#412714",
-          2: "#dccd9b",
-          3: "#e1d7bf",
-          4: "#323232",
+          1: "#8d3132",
+          2: "#5f6062",
+          3: "#bbbdc0",
+          4: "#e6e7e8",
+          5: "#d9c6a5",
         },
         secondary: {
-          "primary-1-4": "#412714",
-          "primary-1-8": "#412714",
-          "primary-1-12": "#412714",
-          "primary-1-30": "#412714",
-          "utility-White-20": "#ffffff",
-          "utility-White-50": "#ffffff",
-          BG: "#dccd9b",
+          1: "#cdaa6b",
+          2: "#102450",
         },
         utility: {
           white: "#ffffff",
           "gray-50": "#f6f6f6",
           "gray-100": "#efefef",
-          "gray-200": "#dcdcdc",
+          "gray-200-line": "#dcdcdc",
           "gray-300": "#bdbdbd",
           "gray-400": "#989898",
           "gray-500": "#818181",
-          "gray-600": "#656565",
+          "gray-600-secondarytext": "#666666",
           "gray-700": "#525252",
           "gray-800": "#464646",
           "gray-900": "#3d3d3d",
-          "gray-950": "#292929",
+          "gray-950-maintext": "#333333",
           black: "#000000",
           "error-1": "#e30e00",
           "error-2": "#e30e00",
@@ -443,7 +439,7 @@ module.exports = {
         "shadow 1": "0px 4px 4px 0px rgba(31,34,39,0.08)",
         "shadow 2": "0px 4px 8px 0px rgba(31,34,39,0.08)",
         "shadow 3": "0px 8px 16px 0px rgba(31,34,39,0.08)",
-        "shadow 4": "0px 16px 24px 0px rgba(31,34,39,0.06)",
+        "shadow 4": "0px 8px 32px 0px rgba(0,0,0,0.04)",
       },
       lineClamp: {
         6: "6",
@@ -454,8 +450,11 @@ module.exports = {
       },
       lineHeight: {
         1.125: "1.125",
+        1.2: "1.2",
+        1.25: "1.25",
         1.3: "1.3",
         1.33: "1.33",
+        1.35: "1.35",
         1.4: "1.4",
         1.44: "1.44",
       },
@@ -517,54 +516,87 @@ module.exports = {
     }) {
       addBase({});
       addComponents({
-        // heading
+        //heading
+        ".heading-banner": {
+          fontSize: "52px",
+          [`@media (min-width: ${theme("screens.lg")})`]: {
+            fontSize: "calc(72/1920*100rem)",
+          },
+          lineHeight: "1.2",
+          fontWeight: "700",
+        },
         ".heading-1": {
-          fontSize: "calc(48/1920*100rem)",
-          lineHeight: "1.3",
+          fontSize: "32px",
+          [`@media (min-width: ${theme("screens.lg")})`]: {
+            fontSize: "calc(48/1920*100rem)",
+          },
+          lineHeight: "1.25",
+          fontWeight: "700",
+        },
+        ".heading-1-mb": {
+          fontSize: "calc(36/1920*100rem)",
+          lineHeight: "1.25",
+          fontWeight: "700",
         },
         ".heading-2": {
-          fontSize: "calc(40/1920*100rem)",
+          fontSize: "calc(36/1920*100rem)",
           lineHeight: "1.3",
+          fontWeight: "700",
         },
         ".heading-3": {
           fontSize: "calc(24/1920*100rem)",
           lineHeight: "1.35",
+          fontWeight: "700",
         },
         ".heading-4": {
           fontSize: "calc(20/1920*100rem)",
           lineHeight: "1.4",
+          fontWeight: "700",
         },
         ".heading-5": {
           fontSize: "calc(18/1920*100rem)",
           lineHeight: "1.4",
+          fontWeight: "600",
         },
-        ".heading-6": {
-          fontSize: "calc(32/1920*100rem)",
+        ".heading-6-button": {
+          fontSize: "calc(16/1920*100rem)",
           lineHeight: "1.4",
+          fontWeight: "600",
+        },
+        ".heading-7-subbutton": {
+          fontSize: "calc(14/1920*100rem)",
+          lineHeight: "1.4",
+          fontWeight: "600",
+        },
+        ".heading-8-menu": {
+          fontSize: "calc(18/1920*100rem)",
+          lineHeight: "1.4",
+          fontWeight: "600",
         },
 
         // text-body
         ".body-1": {
-          fontSize: "calc(16/1920*100rem)",
-          lineHeight: "1.4",
-        },
-        ".body-2": {
           fontSize: "calc(18/1920*100rem)",
           lineHeight: "1.4",
         },
-        ".body-3": {
-          fontSize: "calc(20/1920*100rem)",
+        ".body-2": {
+          fontSize: "calc(16/1920*100rem)",
           lineHeight: "1.4",
         },
-        ".body-4": {
+        ".body-3": {
           fontSize: "clamp(14px,calc(14/1920*100rem),calc(14/1920*100rem))",
           lineHeight: "1.4",
         },
-        ".body-5": {
+        ".body-4": {
           fontSize: "clamp(12px,calc(12/1920*100rem),calc(12/1920*100rem))",
           lineHeight: "1.4",
         },
+        ".body-5": {
+          fontSize: "calc(20/1920*100rem)",
+          lineHeight: "1.4",
+        },
 
+        // title
         ".title-64": {
           fontWeight: "700",
           fontSize: "calc(36/1920*100rem)", // 4xl
